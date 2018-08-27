@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 
 $(document).ready(function() {
-  // game.bindEventListeners();
+  game.bindEventListeners();
   game.render();
 });
 

@@ -7,6 +7,15 @@ const store = (function() {
   let xIsNext = true;
 
   // Play a move
+  const validateMove = function(id) {};
+  const playMove = function(id) {
+    // validate
+    // play move logic
+      // Check if winning move
+      // Play move normally if not winning
+    // flip player
+  };
+  const flipPlayer = function() {};
   // Check if the move is a winning move
   return {
     board,

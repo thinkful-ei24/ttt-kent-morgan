@@ -5,22 +5,25 @@ const game = (function(){
   const board = $('.board');
 
   const generateCellElement = function(cellIndex) {
+    let cells = store.board;
+    // cells[cellIndex] !== null ? cells[cellIndex] : ''
     return `
       <div class="cell" id="${cellIndex}">
-        <p>${cellIndex}</p>
+        <p>${cells[cellIndex] !== null ? cells[cellIndex] : '&nbsp;'}</p>
       </div>
     `;
-  };
-
   };
 
   const generateBoardElement = function() {
     let board = '';
 
-    for (let i=0; i<9; i++) {
-      if (i % 3 === 0) board += '<div class="row">';
-      board += generateCellElement(i);
-      if (i % 3 === 0) board += '</div>';
+    for (let i = 0; i < 9;) {
+      board += '<div class="row">';
+      // append 3 cells for every row
+      for (let j = 0; j < 3; j++, i++) {
+        board += generateCellElement(i);
+      }
+      board += '</div>';
     }
 
     return board;
@@ -32,9 +35,25 @@ const game = (function(){
     // insert that HTML into the DOM
     $('.board').html(board);
   };
+
+  const handleCellClick = function () {
+    $('.board').on('click', '.cell', (e) => {
+      // Grab cell number
+      let cellIndex = e.currentTarget.id;
+      // Modify this cell in the store
+      store.playMove(cellIndex);
+      // render changes
+      render();
+    });
+  };
+
+  const bindEventListeners = function() {
+    handleCellClick();
+  };
   
   return {
-    render
+    render,
+    bindEventListeners
   };
 }());
 
