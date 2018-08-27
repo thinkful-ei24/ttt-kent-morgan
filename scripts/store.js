@@ -27,8 +27,9 @@ const store = (function() {
       validateMove(id);
       board[id] = xIsNext ? 'X' : 'O';
       if (isWinningMove()) {
-        console.log('You won!');
+        window.alert('You won!');
         resetBoard();
+        console.log(board);
       }
       else {
         xIsNext = !xIsNext;
@@ -56,8 +57,9 @@ const store = (function() {
   };
 
   const resetBoard = function() {
-    console.log('hello!');
-    board = Array(9).fill(null);
+    for (let i=0; i<board.length; i++) {
+      board[i] = null;
+    }
     xIsNext = true;
   };
   
@@ -65,7 +67,8 @@ const store = (function() {
   return {
     board,
     xIsNext,
-    playMove
+    playMove,
+    resetBoard
   };
 }());
 
