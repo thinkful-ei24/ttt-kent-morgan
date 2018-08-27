@@ -44,8 +44,16 @@ const game = (function(){
     });
   };
 
+  const handleNewGameClick = function() {
+    $('#new-game').on('click', (e) => {
+      store.resetBoard();
+      render();
+    });
+  };
+
   const bindEventListeners = function() {
     handleCellClick();
+    handleNewGameClick();
   };
   
   return {
@@ -53,5 +61,3 @@ const game = (function(){
     bindEventListeners
   };
 }());
-
-// Event Listeners

@@ -1,16 +1,16 @@
-
 /* global game */
+
+// Listen for changes
+  // Clicks on the board
+  // New game button
+// modify state
+  // Play the move they clicked
+  // Reset the board
+  // Detect if the move won
+// render new state
+  // Translate the board array into our view
+
 $(document).ready(function() {
   game.bindEventListeners();
   game.render();
 });
-
-
-// [0, 1, 2],
-// [3, 4, 5],
-// [6, 7, 8],
-// [0, 3, 6],
-// [1, 4, 7],
-// [2, 5, 6],
-// [0, 4, 8],
-// [2, 4, 6]

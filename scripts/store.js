@@ -29,7 +29,6 @@ const store = (function() {
       if (isWinningMove()) {
         window.alert('You won!');
         resetBoard();
-        console.log(board);
       }
       else {
         xIsNext = !xIsNext;
@@ -71,13 +70,3 @@ const store = (function() {
     resetBoard
   };
 }());
-
-// Listen for changes
-  // Clicks on the board
-  // New game button
-// modify state
-  // Play the move they clicked
-  // Reset the board
-  // Detect if the move won
-// render new state
-  // Translate the board array into our view
