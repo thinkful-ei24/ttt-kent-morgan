@@ -1,14 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const state = {
-  board: Array(9).fill(null),
-  xIsNext: true
-};
 
-// State modification functions
-
-// Render functions
-
-// Event Listeners
 $(document).ready(function() {
   // game.bindEventListeners();
   // game.render();
