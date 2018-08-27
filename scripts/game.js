@@ -1,9 +1,6 @@
+/* global store */
 // eslint-disable-next-line no-unused-vars
-
-// Render functions
 const game = (function(){
-  const board = $('.board');
-
   const generateCellElement = function(cellIndex) {
     let cells = store.board;
     // cells[cellIndex] !== null ? cells[cellIndex] : ''
