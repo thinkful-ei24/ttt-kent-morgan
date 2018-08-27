@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   // game.bindEventListeners();
-  // game.render();
+  game.render();
 });
 
 
